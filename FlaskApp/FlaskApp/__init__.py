@@ -63,6 +63,8 @@ def get_games(date):
             current_game['TEAM_2_PTS'] = team['PTS']
             current_game['TEAM_2_ID'] = team['TEAM_ID']
 
+            current_game['GAME_ID'] = team['GAME_ID']
+
             games.append(current_game)
 
             current_game = {}
