@@ -2,6 +2,10 @@
     background-color: #0275d8!important;
 }
 
+.score-boxes {
+    font-size: 40px;
+}
+
 li a {
     text-decoration: none;
 }
