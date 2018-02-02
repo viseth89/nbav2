@@ -1,0 +1,45 @@
+{% extends 'layout.html' %} {% block body %}
+
+<body>
+    <br>
+
+    <div class="container">
+
+        <br>
+        <br>
+        <h1>Viseth's NBA.com</h1>
+        <h2>These are the games from NBA.Com</h2>
+        <h2>Using the NBA API to grab the games from their site.</h2>
+        <h3>Still reverse engineering the code to understand.</h3>
+        <h3>{{ pretty_date_today }}</h3>
+
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="list-group">
+                    {% for game in games %}
+                    <a href="/boxscores/{{ game['GAME_ID']}}" class='score-boxes list-group-item list-group-item-action'>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                {{ game['TEAM_1_ABBREVIATION'] }} {{ game['TEAM_1_PTS']}}
+                                <br> {{ game['TEAM_1_WINS_LOSSES'] }}
+                            </div>
+                            <div class="col-xs-4">
+                                -&nbsp;
+                            </div>
+                            <div class="col-xs-4">
+                                {{ game['TEAM_2_ABBREVIATION'] }} {{ game['TEAM_2_PTS']}}
+                                <br> {{ game['TEAM_2_WINS_LOSSES'] }}
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+
+
+{% endblock %}
